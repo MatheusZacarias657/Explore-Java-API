@@ -23,7 +23,6 @@ public class DoctorService implements IDoctorService {
         this.repository = repository;
     }
 
-    @Override
     @Transactional
     public DoctorDetailingResponse Create(DoctorRegister doctorRegister){
 

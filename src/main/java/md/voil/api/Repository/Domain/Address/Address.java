@@ -1,4 +1,4 @@
-package md.voil.api.Repository.Domain.Doctor;
+package md.voil.api.Repository.Domain.Address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

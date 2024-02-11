@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import md.voil.api.Repository.Domain.Address.Address;
 import md.voil.api.Service.DTOs.Doctors.DoctorRegister;
 import md.voil.api.Service.DTOs.Doctors.DoctorUpdate;
 

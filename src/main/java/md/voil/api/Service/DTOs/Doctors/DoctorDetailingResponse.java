@@ -2,7 +2,7 @@ package md.voil.api.Service.DTOs.Doctors;
 
 import lombok.Getter;
 import lombok.Setter;
-import md.voil.api.Repository.Domain.Doctor.Address;
+import md.voil.api.Repository.Domain.Address.Address;
 import md.voil.api.Repository.Domain.Doctor.Doctor;
 import md.voil.api.Repository.Domain.Doctor.Specialty;
 
