@@ -5,7 +5,7 @@ CREATE TABLE Patients
     email        NVARCHAR(255) NOT NULL,
     telephone    NVARCHAR(20) NOT NULL,
     cpf          NVARCHAR(50) NOT NULL,
-    active       BIT DEFAULT 1,
+    active       BIT DEFAULT 1 not null,
 
     street       NVARCHAR(255) NOT NULL,
     neighborhood NVARCHAR(255) NOT NULL,

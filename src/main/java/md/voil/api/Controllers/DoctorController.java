@@ -1,11 +1,11 @@
 package md.voil.api.Controllers;
 
-
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
-import md.voil.api.Service.DTOs.Doctors.DoctorDetailingResponse;
-import md.voil.api.Service.DTOs.Doctors.DoctorRegister;
-import md.voil.api.Service.DTOs.Doctors.DoctorUpdate;
-import md.voil.api.Service.Services.Doctor.Interfaces.IDoctorService;
+import md.voil.api.Domain.DTO.Doctors.DoctorDetailingResponse;
+import md.voil.api.Domain.DTO.Doctors.DoctorRegister;
+import md.voil.api.Domain.DTO.Doctors.DoctorUpdate;
+import md.voil.api.Domain.Interface.Doctor.IDoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +18,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/Doctor")
+@SecurityRequirement(name = "bearer-key")
 public class DoctorController {
 
     private final IDoctorService doctorService;

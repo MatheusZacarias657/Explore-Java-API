@@ -1,13 +1,9 @@
 package md.voil.api.Controllers;
 
 import jakarta.validation.Valid;
-import md.voil.api.Service.DTOs.OAuth.Interfaces.IOAuthService;
-import md.voil.api.Service.DTOs.OAuth.UserLogin;
-import org.springframework.beans.factory.annotation.Autowired;
+import md.voil.api.Domain.Interface.OAuth.IOAuthService;
+import md.voil.api.Domain.DTO.OAuth.UserLogin;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

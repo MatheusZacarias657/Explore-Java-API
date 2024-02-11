@@ -4,9 +4,9 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import md.voil.api.Repository.Domain.User.User;
-import md.voil.api.Repository.Repositories.UserRepository;
-import md.voil.api.Service.Services.Auth.TokenSevice;
+import md.voil.api.Domain.Interface.OAuth.ITokenSevice;
+import md.voil.api.Repository.UserRepository;
+import md.voil.api.Application.Service.Auth.TokenSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,11 +19,11 @@ import java.io.IOException;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
 
-    private TokenSevice tokenSevice;
+    private ITokenSevice tokenSevice;
     private UserRepository repository;
 
     @Autowired
-    public SecurityFilter(TokenSevice tokenSevice, UserRepository repository) {
+    public SecurityFilter(ITokenSevice tokenSevice, UserRepository repository) {
         this.tokenSevice = tokenSevice;
         this.repository = repository;
     }
