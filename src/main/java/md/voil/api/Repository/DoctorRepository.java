@@ -21,19 +21,15 @@ public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
     Boolean findActiveById(int id);
 
     @Query("""
-            select d from Doctor d
-            where
-            d.active = true
-            and
-            d.specialty = :specialty
-            and
-            d.id not in(
-                select d.id from Appointment a
-                where
-                a.date = :date
-            )
-            order by rand()
-            limit 1
-            """)
+           SELECT d
+           FROM Doctor d
+           WHERE d.specialty = :specialty
+           AND NOT EXISTS (
+               SELECT 1
+               FROM  Appointment a
+               WHERE a.doctor.id = d.id
+               AND a.date = :date
+           )
+           """)
     Doctor chooseAvailableRandomDoctor(Specialty specialty, LocalDateTime date);
 }

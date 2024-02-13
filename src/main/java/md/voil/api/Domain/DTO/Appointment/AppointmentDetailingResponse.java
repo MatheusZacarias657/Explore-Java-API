@@ -1,5 +1,6 @@
 package md.voil.api.Domain.DTO.Appointment;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class AppointmentDetailingResponse {
 
     private int id;

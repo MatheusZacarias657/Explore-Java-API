@@ -41,8 +41,10 @@ public class AppointmentService implements IAppointmentService {
             throw new ValidationException("Patient doesn't exists");
         }
 
-        if(appointment.getIdDoctor() == 0 || !doctorRepository.findActiveById(appointment.getIdDoctor())){
-            throw new ValidationException("Doctor doesn't exists");
+        if(appointment.getIdDoctor() != 0){
+            if(!doctorRepository.findActiveById(appointment.getIdDoctor())){
+                throw new ValidationException("Doctor doesn't exists");
+            }
         }
 
         appointment.setDate(appointment.getDate().withSecond(0).withNano(0));

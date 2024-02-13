@@ -2,11 +2,13 @@ package md.voil.api.Domain.DTO.Address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class AddressRegister {
         @NotBlank
         private String street;

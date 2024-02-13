@@ -2,6 +2,7 @@ package md.voil.api.Domain.DTO.Doctors;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import md.voil.api.Domain.DTO.Address.AddressRegister;
@@ -9,6 +10,7 @@ import md.voil.api.Domain.Entity.Doctor.Specialty;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class DoctorRegister {
         @NotBlank
         private String name;
